@@ -31,6 +31,7 @@ I decided to add those following:
 I also decided to add a parameter into the uri during stats because from my point of view, with only one endpoint, there is no need to check the same value.
 I decided not to use database for this exercise
 I add a configuration for a docker 
+I add a docker for development configuration
 I add a config for prometheus 
 I add also a configuration to be manage by an elk stack
 
