@@ -1,0 +1,20 @@
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health
+  metrics:
+    export:
+      prometheus:
+        histogram-flavor: prometheus
+        pushgateway:
+          base-url: xxx.xxx.xxxx.xxx
+          password: xxxxxx
+          username: xxxxxx
+
+spring:
+  profiles:
+    active: prod

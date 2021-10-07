@@ -1,0 +1,26 @@
+output:
+    logstash:
+        enabled: true
+        hosts:
+            - xxx.xxx.xxx.xxx:5044
+        timeout: 15
+        ssl:
+            verification_mode: none
+            certificate_authorities:
+                - /etc/pki/tls/client/logstash.crt
+
+filebeat:
+    inputs:
+        -
+            paths:
+                - "/var/log/nginx/*.log"
+            fields_under_root: true
+            fields:
+                type: nginx-access
+        -
+            paths:
+                - /tmp/*.log
+            multiline:
+                pattern: '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])'
+                negate: true
+                match: after
